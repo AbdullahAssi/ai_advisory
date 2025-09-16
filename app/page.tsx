@@ -1,9 +1,9 @@
-import Image from "next/image";
-import RippleGrid from "./hero";
 import MagicBento from "./features";
 import CardNav from "./navbar";
 const logo = "/logo2.webp";
 import Hero from "./test";
+import LaserFlowBoxExample from "./flow";
+import Footer from "./footer";
 
 export default function Home() {
 
@@ -17,6 +17,7 @@ export default function Home() {
         { label: "Careers", href: "/about/careers", ariaLabel: "About Careers" }
       ]
     },
+    
     {
       label: "Projects", 
       bgColor: "#170D27",
@@ -56,6 +57,8 @@ export default function Home() {
       {/* <RippleGrid /> */}
 
       <MagicBento />
+      <LaserFlowBoxExample  />
+      <Footer />
     </div>
   );
 }
