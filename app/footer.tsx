@@ -15,12 +15,12 @@ import { FiArrowUpRight } from "react-icons/fi";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-black mt-20">
+    <footer className="relative mt-20">
       {/* Main gradient container */}
-      <div className="rounded-t-3xl bg-gradient-to-br from-[#0A0A12] to-[#1A1A25] p-8 md:p-16 overflow-hidden">
+      <div className="rounded-t-3xl bg-gradient-to-br from-[#0A0A12] to-[#1A1A25] p-8 md:p-16 overflow-hidden" >
         {/* Top section with CTA */}
         <div className="relative w-full max-w-6xl mx-auto mb-16 overflow-hidden">
-          <div className="flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-[#111118] to-[#18181F] p-6 md:p-10 rounded-2xl">
+          <div className="flex flex-col md:flex-row items-center justify-between  bg-gradient-to-b from-black via-purple-900 to-black p-6 md:p-10 rounded-2xl">
             <div className="flex-1">
               <h2 className="text-3xl md:text-4xl font-bold mb-2">
                 <span className="text-white">LET'S WORK </span>

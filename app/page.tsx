@@ -4,6 +4,8 @@ const logo = "/logo2.webp";
 import Hero from "./test";
 import LaserFlowBoxExample from "./flow";
 import Footer from "./footer";
+import { Card } from "@/components/CardSwap";
+import CardExample from "./cards";
 
 export default function Home() {
 
@@ -17,7 +19,7 @@ export default function Home() {
         { label: "Careers", href: "/about/careers", ariaLabel: "About Careers" }
       ]
     },
-    
+
     {
       label: "Projects", 
       bgColor: "#170D27",
@@ -58,6 +60,7 @@ export default function Home() {
 
       <MagicBento />
       <LaserFlowBoxExample  />
+
       <Footer />
     </div>
   );
