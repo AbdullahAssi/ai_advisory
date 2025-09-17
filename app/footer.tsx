@@ -17,7 +17,7 @@ const Footer = () => {
   return (
     <footer className="relative mt-20">
       {/* Main gradient container */}
-      <div className="rounded-t-3xl bg-gradient-to-br from-[#0A0A12] to-[#1A1A25] p-8 md:p-16 overflow-hidden" >
+      <div className="rounded-t-3xl bg-gradient-to-bl from-[#0A0A12] to-[#1A1A25] p-8 md:p-16 overflow-hidden" >
         {/* Top section with CTA */}
         <div className="relative w-full max-w-6xl mx-auto mb-16 overflow-hidden">
           <div className="flex flex-col md:flex-row items-center justify-between  bg-gradient-to-b from-black via-purple-900 to-black p-6 md:p-10 rounded-2xl">

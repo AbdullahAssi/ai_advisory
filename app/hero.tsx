@@ -63,31 +63,31 @@ const RippleGrid: React.FC<Props> = ({
     containerRef.current.appendChild(gl.canvas);
 
     const vert = `
-attribute vec2 position;
-varying vec2 vUv;
-void main() {
-    vUv = position * 0.5 + 0.5;
-    gl_Position = vec4(position, 0.0, 1.0);
+        attribute vec2 position;
+        varying vec2 vUv;
+        void main() {
+            vUv = position * 0.5 + 0.5;
+            gl_Position = vec4(position, 0.0, 1.0);
 }`;
 
     const frag = `precision highp float;
-uniform float iTime;
-uniform vec2 iResolution;
-uniform bool enableRainbow;
-uniform vec3 gridColor;
-uniform float rippleIntensity;
-uniform float gridSize;
-uniform float gridThickness;
-uniform float fadeDistance;
-uniform float vignetteStrength;
-uniform float glowIntensity;
-uniform float opacity;
-uniform float gridRotation;
-uniform bool mouseInteraction;
-uniform vec2 mousePosition;
-uniform float mouseInfluence;
-uniform float mouseInteractionRadius;
-varying vec2 vUv;
+          uniform float iTime;
+          uniform vec2 iResolution;
+          uniform bool enableRainbow;
+          uniform vec3 gridColor;
+          uniform float rippleIntensity;
+          uniform float gridSize;
+          uniform float gridThickness;
+          uniform float fadeDistance;
+          uniform float vignetteStrength;
+          uniform float glowIntensity;
+          uniform float opacity;
+          uniform float gridRotation;
+          uniform bool mouseInteraction;
+          uniform vec2 mousePosition;
+          uniform float mouseInfluence;
+          uniform float mouseInteractionRadius;
+          varying vec2 vUv;
 
 float pi = 3.141592;
 

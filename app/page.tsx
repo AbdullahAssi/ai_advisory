@@ -6,61 +6,91 @@ import LaserFlowBoxExample from "./flow";
 import Footer from "./footer";
 import { Card } from "@/components/CardSwap";
 import CardExample from "./cards";
+import { AnimatedBeamDemo } from "./beam";
+import FAQs from "./faqs";
 
 export default function Home() {
-
   const items = [
     {
       label: "About",
       bgColor: "#0D0716",
       textColor: "#fff",
       links: [
-        { label: "Company", href: "/about/company", ariaLabel: "About Company" },
-        { label: "Careers", href: "/about/careers", ariaLabel: "About Careers" }
-      ]
+        {
+          label: "Company",
+          href: "/about/company",
+          ariaLabel: "About Company",
+        },
+        {
+          label: "Careers",
+          href: "/about/careers",
+          ariaLabel: "About Careers",
+        },
+      ],
     },
 
     {
-      label: "Projects", 
+      label: "Projects",
       bgColor: "#170D27",
       textColor: "#fff",
       links: [
-        { label: "Featured", href: "/projects/featured", ariaLabel: "Featured Projects" },
-        { label: "Case Studies", href: "/projects/case-studies", ariaLabel: "Project Case Studies" }
-      ]
+        {
+          label: "Featured",
+          href: "/projects/featured",
+          ariaLabel: "Featured Projects",
+        },
+        {
+          label: "Case Studies",
+          href: "/projects/case-studies",
+          ariaLabel: "Project Case Studies",
+        },
+      ],
     },
     {
       label: "Contact",
-      bgColor: "#271E37", 
+      bgColor: "#271E37",
       textColor: "#fff",
       links: [
-        { label: "Email", href: "mailto:info@cymaxtech.com", ariaLabel: "Email us" },
-        { label: "Twitter", href: "https://twitter.com/", ariaLabel: "Twitter" },
-        { label: "LinkedIn", href: "https://linkedin.com/", ariaLabel: "LinkedIn" }
-      ]
-    }
+        {
+          label: "Email",
+          href: "mailto:info@cymaxtech.com",
+          ariaLabel: "Email us",
+        },
+        {
+          label: "Twitter",
+          href: "https://twitter.com/",
+          ariaLabel: "Twitter",
+        },
+        {
+          label: "LinkedIn",
+          href: "https://linkedin.com/",
+          ariaLabel: "LinkedIn",
+        },
+      ],
+    },
   ];
 
   return (
-
-    
     <div className="font-sans ">
       <CardNav
-      logo={logo}
-      logoAlt="Company Logo"
-      items={items}
-      // baseColor="#d61b1b"
-      menuColor="#f0f0f0"
-      buttonBgColor="#111"
-      buttonTextColor="#fff"
-      ease="power3.out"
-    />
-    <Hero />
+        logo={logo}
+        logoAlt="Company Logo"
+        items={items}
+        // baseColor="#d61b1b"
+        menuColor="#f0f0f0"
+        buttonBgColor="#111"
+        buttonTextColor="#fff"
+        ease="power3.out"
+      />
+      <Hero />
       {/* <RippleGrid /> */}
 
       <MagicBento />
-      <LaserFlowBoxExample  />
-
+      <LaserFlowBoxExample />
+      <div className="bg-gradient-to-b from-black to-white">
+        <AnimatedBeamDemo />
+      </div>
+      <FAQs />
       <Footer />
     </div>
   );
