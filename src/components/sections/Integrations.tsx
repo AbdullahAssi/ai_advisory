@@ -1,6 +1,7 @@
 'use client';
-import LaserFlow from '../components/LaserFlow';
+import LaserFlow from '../ui/LaserFlow';
 import { useRef } from 'react';
+import { AnimatedBeamDemo } from './BeamSection';
 const img = '../public/tst.jpg';
 
 // Basic Usage
@@ -9,7 +10,7 @@ const img = '../public/tst.jpg';
 </div>
 
 // Image Example Interactive Reveal Effect
-function LaserFlowBoxExample() {
+function Integrations() {
   const revealImgRef = useRef(null);
 
   return (
@@ -61,7 +62,7 @@ function LaserFlowBoxExample() {
         fontSize: '2rem',
         zIndex: 6
       }}>
-        AI Advisory: Get instant insights and recommendations powered by artificial intelligence.
+        <AnimatedBeamDemo />
       </div>
 
       <img
@@ -88,4 +89,4 @@ function LaserFlowBoxExample() {
   );
 }
 
-export default LaserFlowBoxExample;
+export default Integrations;

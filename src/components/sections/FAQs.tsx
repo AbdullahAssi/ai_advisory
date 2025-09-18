@@ -5,7 +5,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
-// Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
 interface FAQItemProps {
@@ -45,20 +44,19 @@ const FAQItem: React.FC<FAQItemProps> = ({
       }
     }
 
-    // Add a small animation to the question when clicked
     if (questionRef.current && isActive) {
       gsap.fromTo(
         questionRef.current,
-        { color: "#000000" },
+        { color: "#1f2937" }, // gray-800
         {
-          color: "#a855f7", // Purple color when active
+          color: "#a855f7",
           duration: 0.3,
           ease: "power2.out",
         }
       );
     } else if (questionRef.current) {
       gsap.to(questionRef.current, {
-        color: "#000000", // Default black color
+        color: "#1f2937", // gray-800
         duration: 0.3,
         ease: "power2.in",
       });
@@ -67,9 +65,9 @@ const FAQItem: React.FC<FAQItemProps> = ({
 
   return (
     <div
-      className={`border-b border-gray-800 py-6 transition-all ${
+      className={`border-b border-gray-300 py-6 transition-all ${
         isActive
-          ? "bg-gradient-to-r from-transparent to-purple-900/10 rounded-md"
+          ? "bg-gradient-to-r from-transparent to-purple-100 rounded-md"
           : ""
       }`}
     >
@@ -82,16 +80,17 @@ const FAQItem: React.FC<FAQItemProps> = ({
       >
         <h3
           ref={questionRef}
-          className="text-xl md:text-2xl font-medium transition-colors duration-300 text-black"
+          className="text-xl md:text-2xl font-medium transition-colors duration-300 text-gray-900"
         >
           {question}
         </h3>
-        <span className="text-purple-500 transition-transform duration-300 p-1 rounded-full bg-purple-900/20">
+        <span className="text-purple-500 transition-transform duration-300 p-1 rounded-full bg-purple-100">
           {isActive ? <IoIosArrowUp size={24} /> : <IoIosArrowDown size={24} />}
         </span>
       </div>
-      <div ref={contentRef} className="overflow-hidden opacity-0 h-0">
-        <p className="pt-4 text-black text-lg leading-relaxed">{answer}</p>
+      {/* ✅ Removed opacity-0 so content always shows when expanded */}
+      <div ref={contentRef} className="overflow-hidden h-0">
+        <p className="pt-4 text-gray-700 text-lg leading-relaxed">{answer}</p>
       </div>
     </div>
   );
@@ -135,17 +134,19 @@ const FAQs: React.FC = () => {
 
   useEffect(() => {
     if (containerRef.current) {
-      // Create the animation
-      const animation = gsap.from(containerRef.current.children, {
-        y: 30,
-        opacity: 0,
-        stagger: 0.1,
-        duration: 0.8,
-        ease: "power3.out",
-        paused: true,
-      });
+      const animation = gsap.fromTo(
+        containerRef.current.children,
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          stagger: 0.1,
+          duration: 0.8,
+          ease: "power3.out",
+          paused: true,
+        }
+      );
 
-      // Create ScrollTrigger separately
       ScrollTrigger.create({
         trigger: containerRef.current,
         start: "top 80%",
@@ -153,21 +154,20 @@ const FAQs: React.FC = () => {
       });
     }
 
-    // Clean up ScrollTrigger on component unmount
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
   return (
-    <section className="py-16 md:py-24 bg-white/5">
+    <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 md:mb-20">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-black">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-gray-900">
               Frequently Asked Questions
             </h2>
-            <p className="text-black text-xl max-w-2xl mx-auto">
+            <p className="text-gray-700 text-xl max-w-2xl mx-auto">
               Everything you need to know about AI Advisory and how it can
               transform your business decision-making
             </p>

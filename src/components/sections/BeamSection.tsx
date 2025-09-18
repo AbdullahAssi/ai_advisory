@@ -3,7 +3,7 @@
 import React, { forwardRef, useRef } from "react";
 
 import { cn } from "@/lib/utils";
-import { AnimatedBeam } from "../components/ui/animated-beam";
+import { AnimatedBeam } from "../ui/animated-beam";
 
 const Circle = forwardRef<
   HTMLDivElement,
@@ -37,12 +37,12 @@ export function AnimatedBeamDemo() {
   return (
     <div>
         <h1
-          className="mb-8 text-4xl text-center font-extrabold text-white  "
+          className=" text-4xl text-center font-extrabold text-white "
         >
           Integrations with OpenAI
         </h1>
     <div
-      className="relative flex h-[300px] w-full items-center justify-center overflow-hidden p-10"
+      className="relative flex h-[300px] w-full items-center justify-center overflow-hidden p-4"
       ref={containerRef}
     >
       <div className="flex size-full max-h-[300px] max-w-lg flex-col items-stretch justify-between gap-10">

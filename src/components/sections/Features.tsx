@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useEffect, useState, useCallback } from "react";
 import { gsap } from "gsap";
-import RippleGrid from "./hero";
+import RippleGrid from "@/components/ui/RippleGrid";
 
 export interface BentoCardProps {
   color?: string;
@@ -296,7 +296,7 @@ const ParticleCard: React.FC<{
         const magnetY = (y - centerY) * 0.05;
 
         magnetismAnimationRef.current = gsap.to(element, {
-          x: magnetX,     
+          x: magnetX,
           y: magnetY,
           duration: 0.3,
           ease: "power2.out",
